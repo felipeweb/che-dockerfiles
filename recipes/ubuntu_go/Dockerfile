@@ -50,4 +50,5 @@ RUN sudo curl -fsSL "$GOLANG_DOWNLOAD_URL" -o golang.tar.gz \
         sudo chmod -R g+rwX ${f}; \
     done
 EXPOSE 8080
+ENV GO111MODULE=om
 CMD ${HOME}/gopath.sh & tail -f /dev/null
