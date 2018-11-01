@@ -7,7 +7,7 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo bash - && \
     make \
     nodejs \
     && sudo rm -rf /var/lib/apt/lists/*
-ENV GOLANG_VERSION 1.10.2
+ENV GOLANG_VERSION 1.11.1
 ENV GOLANG_LS_VERSION="0.1.7"
 ENV goRelArch linux-amd64
 ENV GOLANG_DOWNLOAD_URL https://golang.org/dl/go${GOLANG_VERSION}.${goRelArch}.tar.gz
@@ -50,5 +50,5 @@ RUN sudo curl -fsSL "$GOLANG_DOWNLOAD_URL" -o golang.tar.gz \
         sudo chmod -R g+rwX ${f}; \
     done
 EXPOSE 8080
-ENV GO111MODULE=om
+ENV GO111MODULE=on
 CMD ${HOME}/gopath.sh & tail -f /dev/null
